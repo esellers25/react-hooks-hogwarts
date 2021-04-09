@@ -6,10 +6,12 @@ function PigDisplay({hogs}){
     const [isFiltered, setIsFiltered] = useState(false)
     const [nameSorted, setNameSorted] = useState(false)
     const [weightSorted, setWeightSorted] = useState(false)
+    
 
     const filteredPigs = hogs.filter(hog => {
         return !isFiltered || hog.greased
     })
+
 
     //if name sort, sort by name, if weight sort, sort by weight, otherwise dont sort
     const sortedPigs = filteredPigs.sort((pig1, pig2) => {
@@ -57,10 +59,12 @@ function PigDisplay({hogs}){
             <button onClick={handleFilterPress}>Filter Greased</button>
             <h3>sort by:</h3>
             <button onClick={sortByName}>name</button>
-            <button onClick={sortByWeight}>weight</button>
-                <ul className="ui grid container">
+            <button onClick={sortByWeight}>weight</button><br></br>
+                <div>
+                    <ul className="ui grid container">
                     {pigArray}
-                </ul>
+                    </ul>
+                </div>
         </>
 
 

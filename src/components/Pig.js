@@ -9,9 +9,9 @@ function Pig({name, image, speciality, greased, weight, highestmedalachieved}){
     }
     
     return(
-        <li className="ui eight wide column" onClick={showInfo}>
+        <li className="ui eight wide column maxPigTile" onClick={showInfo}>
             <h1>{name}</h1>
-                <img src={image} alt={name}></img>
+                <img className="minPigTile" src={image} alt={name}></img>
                     {hidden ? 
                     (<><p>Speciality: {speciality}</p>
                     <p>{greased ? "Greased" : "Not Greased"}</p>
